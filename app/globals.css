@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-accent: var(--accent);
+  --color-rule: var(--rule);
+  --font-sans: var(--font-grotesque);
+}
+
+:root {
+  --bg: #f4f2ee;
+  --fg: #101010;
+  --accent: #5a6b00;
+  --rule: color-mix(in srgb, var(--fg) 22%, transparent);
+  --font-grotesque: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+body {
+  font-family: var(--font-grotesque);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+input {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+input::placeholder {
+  color: color-mix(in srgb, var(--fg) 55%, transparent);
+}
+
+input:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a,
+  button {
+    transition: color 160ms ease, border-color 160ms ease, opacity 160ms ease;
+  }
+}
