@@ -1,25 +1,17 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
-import { readFanId } from "@/lib/fan-cookie";
 import { platforms } from "@/lib/platforms";
 import { PlatformItem } from "@/components/platform-item";
 import { Wordmark } from "@/components/wordmark";
 
 export const metadata: Metadata = {
   title: "Listen",
-  robots: { index: false, follow: false },
 };
 
 /**
- * The gate has to decide before anything renders — a prerendered shell would
- * flash the platform rows to a fan who never filled the form.
+ * Public on purpose. The form is what captures a fan; this page only has to
+ * get them to the right service, so it never blocks anyone.
  */
-export const instant = false;
-
-export default async function ListenPage() {
-  // The gate. No cookie, no destination list.
-  if (!(await readFanId())) redirect("/");
-
+export default function ListenPage() {
   return (
     <div className="flex min-h-dvh flex-col">
       <header className="px-5 pt-5 sm:px-8">

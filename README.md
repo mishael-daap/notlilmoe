@@ -7,12 +7,12 @@ Official site for **notlilmoe**. One mobile-first page that introduces the artis
 ```
 /            name + email form  ──submit──▶  EmailJS notification + optional DB write
                                              │
-/listen      Spotify / Apple Music  ◀────────┘  (gated by cookie)
+/listen      Spotify / Apple Music  ◀────────┘  (public page)
              │
 /go/<slug>   records the choice, then 302s to the artist profile
 ```
 
-- The gate is a `nlm_fan` httpOnly cookie set at submit time. Without it, `/listen` redirects to `/`.
+- `/listen` is public: the form is what captures a fan, the picker just routes them. A `nlm_fan` cookie is set at submit so `/go/<slug>` can record which service they chose.
 - The notification email is the primary capture channel; Supabase is optional until a project exists.
 
 ## Stack

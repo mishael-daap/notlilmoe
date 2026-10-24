@@ -1,7 +1,7 @@
 /**
- * The gate. Submitting the form mints this cookie; `/listen` and `/go/*` read
- * it. It holds the subscriber id only — no name, no email — so a stolen cookie
- * leaks nothing beyond "this browser passed the form once".
+ * Records which fan tapped which service. Set at submit time, read by
+ * `/go/<platform>`. It is attribution only — nothing is gated behind it.
+ * Holds the subscriber id, no name or email.
  */
 import { cookies } from "next/headers";
 
