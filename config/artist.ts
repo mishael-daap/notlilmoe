@@ -34,11 +34,8 @@ export const artist = {
   spotifyUrl: "https://open.spotify.com/artist/7KEeOhkWNRV8cNMAkbZJ5q",
   appleMusicUrl: "https://music.apple.com/ng/artist/notlilmoe/1533854366",
 
-  socials: [
-    { label: "Instagram", href: "https://instagram.com/PLACEHOLDER" },
-    { label: "TikTok", href: "https://tiktok.com/@PLACEHOLDER" },
-    { label: "YouTube", href: "https://youtube.com/@PLACEHOLDER" },
-  ] as Social[],
+  /** Empty until the real accounts exist — the footer hides the row when so. */
+  socials: [] as Social[],
 
   /** Small label opposite the wordmark. */
   status: "OFFICIAL SITE",
